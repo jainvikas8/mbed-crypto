@@ -879,6 +879,7 @@ component_test_se_default () {
 
 component_test_se_full () {
     msg "build: full config + MBEDTLS_PSA_CRYPTO_SE_C"
+    scripts/config.pl full
     scripts/config.pl set MBEDTLS_PSA_CRYPTO_SE_C
     make CC=gcc CFLAGS="$ASAN_CFLAGS -O2" LDFLAGS="$ASAN_CFLAGS"
 
